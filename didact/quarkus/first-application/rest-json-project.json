@@ -1,0 +1,96 @@
+{
+	"folders": [
+	{
+	   "name":"rest-json",
+			"folders": [
+				{
+					"name":"src",
+					"folders": [
+						{
+							"name":"main",
+							"folders": [
+								{
+                  "name":"resources",
+                  "folders": [
+                    {
+                      "name": "META-INF",
+                      "folders": [
+                        {
+                          "name": "resources",
+                          "files": [
+                            {
+                              "name":"fruits.html",
+                              "copy":"fruits.html"
+                            },
+                            {
+                              "name":"legumes.html",
+                              "copy":"legumes.html"
+                            }
+                          ]
+                        }
+
+                      ]
+                    }
+                  ],
+									"files": [
+										{
+											"name":"application.properties",
+											"copy":"application.properties"
+										}
+									]
+								},
+								{
+									"name":"java",
+									"folders": [
+										{
+                      "name":"org",
+                      "folders" : [
+                        {
+                          "name":"acme",
+                          "folders":[
+                            {
+                              "name": "rest", 
+                              "folders": [
+                                {
+                                  "name": "json",
+                                  "files": [
+                                    {
+                                      "name":"Fruit.java",
+                                      "copy":"Fruit.java"
+                                    },
+                                    {
+                                      "name":"Legume.java",
+                                      "copy":"Legume.java"
+                                    },
+                                    {
+                                      "name":"Routes.java",
+                                      "copy":"Routes.java"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                        ]
+                      }
+                    ]
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		],
+		"files": [
+			{
+				"name":"pom.xml",
+				"copy":"pom.xml.txt"
+			},
+			{
+				"name":"README.adoc",
+				"copy":"README.adoc"
+			}
+		]
+	}
+]
+}
