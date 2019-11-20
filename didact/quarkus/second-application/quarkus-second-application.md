@@ -16,7 +16,9 @@ What follows is a simple step-by-step process that helps you create a new Quarku
 
 We will:
 
-* Do some things
+* Create a new Quarkus project
+* Start a debug session to see the Quarkus application in action
+* Update the project code to see the "live" aspect of Quarkus debugging
 
 ## Prerequisites 
 
@@ -26,17 +28,51 @@ You must have a few things set up prior to walking through the steps in this tut
 
 | Requirement (Click to Verify)  | Availability | Additional Information/Solution |
 | :--- | :--- | :--- |
-| [At least one folder exists in the workspace](didact://?commandId=vscode.didact.workspaceFolderExistsCheck&text=workspace-folder-status&completion=A%20valid%20folder%20exists%20in%20the%20workspace. "Ensure that at least one folder exists in the user workspace"){.didact} | *Status: unknown*{#workspace-folder-status} | Create a workspace folder (or [click here to create a temporary folder](didact://?commandId=vscode.didact.createWorkspaceFolder&completion=Created%20temporary%20folder%20in%20the%20workspace. "Create a temporary folder and add it to the workspace."){.didact}), close, and reopen the Didact window
-| [DK 1.8+ with JAVA_HOME configured appropriately](didact://?commandId=vscode.didact.requirementCheck&text=java-requirements-status$$java%20-version$$Runtime%20Environment&completion=Java%20is%20available%20on%20this%20system. "Tests to see if `java -version` returns a result"){.didact} 	| *Status: unknown*{#java-requirements-status} 	| 
-[Apache Maven is accessible at the command line](didact://?commandId=vscode.didact.requirementCheck&text=maven-requirements-status$$mvn%20--version$$Apache%20Maven&completion=Apache%20Maven%20is%20available%20on%20this%20system. "Tests to see if `mvn -version` returns a result"){.didact} 	| *Status: unknown*{#maven-requirements-status} 	| See [Installing Apache Maven](https://maven.apache.org/install.html "Documentation on how to Install Apache Maven on your system") and then restart VS Code
-| [Quarkus Tools for Visual Studio Code is installed](didact://?commandId=vscode.didact.extensionRequirementCheck&text=quarkus-extension-requirement-status$$redhat.vscode-quarkus&completion=Quarkus%20extension%20pack%20available. "Checks the VS Code workspace to make sure the Quarkus extension is installed"){.didact} | *Status: unknown*{#camelk-extension-requirement-status} 	| [Click here to install](vscode:extension/redhat.vscode-quarkus "Opens the extension page and provides an install link") |
+| [Quarkus Tools for Visual Studio Code is installed](didact://?commandId=vscode.didact.extensionRequirementCheck&text=quarkus-extension-requirement-status$$redhat.vscode-quarkus&completion=Quarkus%20extension%20pack%20available. "Checks the VS Code workspace to make sure the Quarkus extension is installed"){.didact} | *Status: unknown*{#quarkus-extension-requirement-status} 	| [Click here to install](vscode:extension/redhat.vscode-quarkus "Opens the extension page and provides an install link") |
 
 ## Creating a new Quarkus Application
 
 Quarkus provides an amazingly fast platform for Java applications, so let's create one!
 
-* Steps will go here
+- [ ] [Start the `Quarkus: Generate a Maven project` command to create a project. You can open the Command Palette with F1 or Ctrl+Shift+P to find the command yourself, or click here to start it automatically.](didact://?commandId=quarkusTools.createProject&completion=Started%20Quarkus%20wizard. "Starts the Quarkus 'Create Project' wizard"){.didact}
 
-# Finding more information
+At each step, enter the information below.
 
-For more about **Apache Camel Extensions for Quarkus**, [check out the project documentation](https://camel.apache.org/camel-quarkus/latest/index.html).
+| Step | Value |
+| :--- | :---  |
+| 1. Your project groupId | `org.acme` |
+| 2. Your project artifactId | `greetings` |
+| 3. Your project version | `1.0.0-SNAPSHOT` |
+| 4. Your package name | `org.acme` |
+| 5. Your resource name | `GreetingResource` |
+| 6. Pick extensions | None needed, just press `Enter` |
+
+When you finish going through the wizard, you will be prompted to select the folder where you want the project to be created. Select a folder in the dialog and click `Generate Here` to continue. This will open a new workbench window with your project directed automatically added.
+
+*You may have to open this Didact tutorial in the other workbench window to continue.*
+
+## Debugging your Quarkus application
+
+When you are ready to run and debug your application, the Quarkus tooling can help you with that by starting the application and attaching the integrated VS Code debugger.
+
+- [ ] [Start the `Quarkus: Debug current Quarkus project` command to start a debug session. You can open the Command Palette with F1 or Ctrl+Shift+P to find the command yourself, or click here to start it automatically.](didact://?commandId=quarkusTools.debugQuarkusProject&completion=Started%20Quarkus%20debug. "Starts a Quarkus Debug session"){.didact}
+
+To validate that the application is running, we can go to the Rest endpoint and operation that it creates. 
+
+- [ ] [Go to `http://localhost:8080/hello`](http://localhost:8080/hello) to see the string "hello" appear. 
+
+## Updating the code while in a live debug session
+
+If you open the `GreetingResource.java` file, you can edit the message displayed to the user.
+
+- [ ] If you have the `greetings` project in your workspace, you can [open the GreetingResource.java file in the editor.](didact://?commandId=vscode.openFolder&projectFilePath=src/main/java/org/acme/GreetingResource.java&completion=Opened%20the%20GreetingResource.java%20file "Opens the GreetingResource.java file"){.didact}
+
+Change the return string of the `hello()` method to `Hello, world!` and save the file, then refresh your link in the web browser to see `Hello, world!`.
+
+# Other capabilities
+
+Beyond creating and debugging Quarkus projects, the VS Code extension also provides multiple code snippets to aid in common development tasks.
+
+For more about **Quarkus Tools for Visual Studio Code**, [check out the extension page](hhttps://marketplace.visualstudio.com/items?itemName=redhat.vscode-quarkus).
+
+Happy coding!
